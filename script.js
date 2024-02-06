@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let urlNumber = getRandomNumber(1, 277); // Get a random number between 1 and 277
 
     // Audio element for typing sound effect
-    const typingSound = new Audio('https://raw.githubusercontent.com/devinull/psycho.site/main/audio/thock.wav'); // Adjust the file name and path or url as needed
+    const typingSound = new Audio('https://raw.githubusercontent.com/devinull/psycho.site/main/audio/thock.mp3'); // Adjust the file name and path or url as needed
 
     // Function to fetch text from the URL
     function fetchTextFromUrl(url) {
