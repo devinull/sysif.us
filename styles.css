@@ -23,13 +23,10 @@ body {
     overflow: hidden; /* Ensure text wraps within container */
 }
 
-.metadata {
-    font-size: 16px;
+metadata {
     text-align: left;
     color: green;
     cursor: pointer;
-    margin: 5% auto;
-    max-width:80%;
 }
 .cursor {
     display: inline-block;
