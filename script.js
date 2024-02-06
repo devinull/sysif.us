@@ -3,16 +3,26 @@ document.addEventListener("DOMContentLoaded", function() {
     const textElement = document.getElementById('text');
     let animationComplete = false;
     let urlNumber = getRandomNumber(1, 277); // Get a random number between 1 and 277
+    let audioLoaded = false; // Flag to track audio loading state
 
     // Audio element for typing sound effect
-    const typingSound = new Audio('https://raw.githubusercontent.com/devinull/psycho.site/main/audio/audio_thock.mp3'); // Adjust the file name and path or url as needed
+    const typingSound = new Audio('https://raw.githubusercontent.com/devinull/psycho.site/main/audio/thock.mp3'); // Adjust the file name and path or url as needed
+
+    // Listen for the 'canplaythrough' event of the audio element
+    typingSound.addEventListener('canplaythrough', function() {
+        audioLoaded = true;
+    });
 
     // Function to fetch text from the URL
     function fetchTextFromUrl(url) {
         fetch(url)
         .then(response => response.text())
         .then(text => {
-            typeText(text);
+            if (audioLoaded) { // Check if the audio is loaded
+                typeText(text);
+            } else {
+                setTimeout(() => fetchTextFromUrl(url), 100); // Retry after a short delay
+            }
         })
         .catch(error => console.error('Error fetching text:', error));
     }
@@ -31,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function typeText(text) {
         let textIndex = 0;
         textElement.textContent = ''; // Clear previous text
-        typeNextLetter();
 
+        // Function to type the next letter
         function typeNextLetter() {
             if (textIndex < text.length) {
                 // Check if the audio is playing
@@ -79,6 +89,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 }, 5000); // 5000 milliseconds = 5 seconds
             }
         }
+
+        // Start typing the text
+        typeNextLetter();
     }
 
     // Fetch text from the initial URL
