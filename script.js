@@ -1,17 +1,24 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Fetch the text file
-    fetch('https://raw.githubusercontent.com/devinull/psycho.site/main/text/self/thought.100.txt')
-    .then(response => response.text())
-    .then(text => {
-        typeText(text);
-    })
-    .catch(error => console.error('Error fetching text:', error));
-
+    const baseUrl = 'https://raw.githubusercontent.com/devinull/psycho.site/main/text/self/thought.';
     const textElement = document.getElementById('text');
-    let textIndex = 0;
     const typingSpeed = 50; // in milliseconds
+    let animationComplete = false;
+    let urlNumber = 100; // Starting number in the URL
 
+    // Function to fetch text from the URL
+    function fetchTextFromUrl(url) {
+        fetch(url)
+        .then(response => response.text())
+        .then(text => {
+            typeText(text);
+        })
+        .catch(error => console.error('Error fetching text:', error));
+    }
+
+    // Function to type the text
     function typeText(text) {
+        let textIndex = 0;
+        textElement.textContent = ''; // Clear previous text
         const typingInterval = setInterval(function() {
             if (textIndex < text.length) {
                 // Remove the previous cursor
@@ -31,7 +38,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 textIndex++;
             } else {
                 clearInterval(typingInterval);
+                animationComplete = true;
+                // Wait for 5 seconds before fetching next text
+                setTimeout(function() {
+                    if (animationComplete) {
+                        // Increment URL number and fetch next text
+                        urlNumber++;
+                        const nextUrl = baseUrl + urlNumber + '.txt';
+                        fetchTextFromUrl(nextUrl);
+                    }
+                }, 5000); // 5000 milliseconds = 5 seconds
             }
         }, typingSpeed);
     }
+
+    // Fetch text from the initial URL
+    fetchTextFromUrl(baseUrl + urlNumber + '.txt');
 });
