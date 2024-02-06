@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Fetch the text file
-    fetch('text.txt')
+    fetch('https://raw.githubusercontent.com/devinull/psycho.site/main/text/self/thought.100.txt')
     .then(response => response.text())
     .then(text => {
         typeText(text);
