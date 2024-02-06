@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const metadataElement = document.getElementById('metadata');
     const textElement = document.getElementById('text');
     let animationComplete = false;
-    let urlNumber = getRandomNumber(1, 255); // Get a random number between 1 and 277
+    let urlNumber = getRandomNumber(1, 255); // Get a random number between 1 and 255
     let audioLoaded = false; // Flag to track audio loading state
 
     // Audio element for typing sound effect
@@ -82,6 +82,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (animationComplete) {
                         // Increment URL number and fetch next text
                         urlNumber++;
+                        if (urlNumber > 255) {
+                            urlNumber = getRandomNumber(0, 255); // Set to a random value between 0 and 255
+                        }
                         const nextUrl = baseUrl + urlNumber + '.txt';
                         fetchTextFromUrl(nextUrl);
                     }
