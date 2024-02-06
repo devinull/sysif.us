@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 textElement.appendChild(cursorSpan);
 
                 // Get a random typing speed for the next letter
-                const typingSpeed = getRandomTypingSpeed(25, 75);
+                const typingSpeed = getRandomTypingSpeed(35, 150);
 
                 // Wait for the next letter with the calculated typing speed
                 setTimeout(() => {
