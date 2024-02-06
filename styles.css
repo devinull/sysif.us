@@ -23,7 +23,7 @@ body {
     overflow: hidden; /* Ensure text wraps within container */
 }
 
-metadata {
+.metadata {
     font-size: 16px;
     text-align: left;
     color: green;
