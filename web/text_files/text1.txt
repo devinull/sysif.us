@@ -1,3 +1,0 @@
-This is example text that is meant to be typed by the javascript script.
-
-I'm writing extra to ensure that the text behaves properly when being loaded.
