@@ -5,6 +5,15 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.header {
+    font-size: 16px;
+    text-align: left;
+    color: green;
+    cursor: pointer;
+    margin: 5% auto;
+    max-width:80%;
+}
+
 .container {
     margin: 20% auto;
     max-width: 80%;
@@ -14,6 +23,14 @@ body {
     overflow: hidden; /* Ensure text wraps within container */
 }
 
+metadata {
+    font-size: 16px;
+    text-align: left;
+    color: green;
+    cursor: pointer;
+    margin: 5% auto;
+    max-width:80%;
+}
 .cursor {
     display: inline-block;
     animation: blink 0.7s infinite;

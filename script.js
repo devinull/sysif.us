@@ -1,8 +1,14 @@
+function reloadPage() {
+    window.location.reload();
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const baseUrl = 'https://raw.githubusercontent.com/devinull/psycho.site/main/text/self/thought.';
+    const metadataElement = document.getElementById('metadata');
     const textElement = document.getElementById('text');
     let animationComplete = false;
-    let urlNumber = getRandomNumber(1, 277); // Get a random number between 1 and 277
+    let urlNumber = getRandomNumber(1, 255); // Get a random number between 1 and 277
+    let audioLoaded = false; // Flag to track audio loading state
 
     // Audio element for typing sound effect
     const typingSound = new Audio('https://raw.githubusercontent.com/devinull/psycho.site/main/audio/thock.mp3'); // Adjust the file name and path or url as needed
@@ -32,6 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
         let textIndex = 0;
         textElement.textContent = ''; // Clear previous text
         typeNextLetter();
+
+        // Set the metadata text
+        metadataElement.textContent = 'Thought ' + urlNumber + ':';
 
         function typeNextLetter() {
             if (textIndex < text.length) {
