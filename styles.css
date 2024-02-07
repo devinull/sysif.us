@@ -1,33 +1,42 @@
+/* Define the @font-face rule to specify the custom font */
+@font-face {
+    font-family: 'Ac437 Robotron A7100';
+    src: url('font/Ac437_Robotron_A7100.woff') format('woff'),
+        url('font/Ac437_Robotron_A7100.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 body {
+    font-size: 1rem;
     margin: 0;
     padding: 0;
     background-color: black;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Ac437 Robotron A7100', 'Courier New', Courier, monospace;
 }
 
 .header {
-    font-size: 1rem;
     text-align: left;
-    color: green;
+    color: rgb(0, 255, 0);
     cursor: pointer;
     margin: 5% auto;
     max-width:80%;
 }
 
 .container {
-    font-size: 1rem;
-    margin: 20% auto;
+    margin: 10% auto;
     max-width: 80%;
     text-align: left;
-    color: green;
+    color: rgb(0, 255, 0);
     position: relative;
     overflow: hidden; /* Ensure text wraps within container */
 }
 
 metadata {
-    font-size: 1rem;
     text-align: left;
-    color: green;
+    color: rgb(0, 255, 0);
     cursor: pointer;
 }
 .cursor {

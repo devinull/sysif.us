@@ -3,10 +3,10 @@ function reloadPage() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    const baseUrl = 'https://raw.githubusercontent.com/devinull/psycho.site/main/text/self/thought.';
+    const baseUrl = 'https://raw.githubusercontent.com/devinull/psycho.site/main/text/prophet/religion.';
     const metadataElement = document.getElementById('metadata');
     const textElement = document.getElementById('text');
-    const numText = 255;
+    const numText = 150;
     let animationComplete = false;
     let urlNumber = getRandomNumber(1, numText); // Get a random number between 1 and 255
     let audioLoaded = false; // Flag to track audio loading state
@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function() {
         typeNextLetter();
 
         // Set the metadata text
-        metadataElement.textContent = 'Thought ' + urlNumber + ':';
-
+        metadataElement.textContent = 'Thought ' + urlNumber.toString(2) + ':';
+        
         function typeNextLetter() {
             if (textIndex < text.length) {
                 // Check if the audio is playing
