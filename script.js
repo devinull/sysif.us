@@ -60,7 +60,16 @@ document.addEventListener("DOMContentLoaded", function() {
                     textElement.removeChild(previousCursor);
                 }
 
-                textElement.textContent += text[textIndex];
+                // Check for line breaks and new lines
+            if (text[textIndex] === '\n') {
+                // If it's a new line, append a <br> element
+                textElement.innerHTML += '<br>';
+            } else if (text[textIndex] === '\r') {
+                // Ignore carriage return characters
+            } else {
+                // Add the new character
+                textElement.innerHTML += text[textIndex];
+            }
 
                 // Add the new cursor
                 const cursorSpan = document.createElement('span');
