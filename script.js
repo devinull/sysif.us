@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const baseUrl = 'https://raw.githubusercontent.com/devinull/psycho.site/main/text/trapped/trapped.';
     const metadataElement = document.getElementById('metadata');
     const textElement = document.getElementById('text');
-    const numText = 150;
+    const numText = 92;
     let animationComplete = false;
     let urlNumber = getRandomNumber(1, numText); // Get a random number between 1 and 255
     let audioLoaded = false; // Flag to track audio loading state
