@@ -10,7 +10,7 @@
 
 
 body {
-    font-size: 1rem;
+    font-size: 1.03rem;
     margin: 0;
     padding: 0;
     background-color: black;
@@ -43,6 +43,25 @@ metadata {
     display: inline-block;
     animation: blink 0.7s infinite;
 }
+
+/* Shaders */
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    filter:brightness(20%);
+  }
+  
+  iframe {
+    position: relative;
+    width: 100%;
+  }
+
 
 @keyframes blink {
     0% {

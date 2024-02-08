@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
         typeNextLetter();
 
         // Set the metadata text
-        metadataElement.textContent = 'Thought ' + urlNumber.toString(2) + ':';
+        metadataElement.textContent = 'thought(' + urlNumber.toString(2) + ') >';
         
         function typeNextLetter() {
             if (textIndex < text.length) {
