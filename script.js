@@ -3,7 +3,7 @@ function reloadPage() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    const baseUrl = 'https://raw.githubusercontent.com/devinull/psycho.site/main/text/trapped/trapped.';
+    const baseUrl = 'https://raw.githubusercontent.com/devinull/psycho.site/main/text/onImprisonment/trapped.';
     const metadataElement = document.getElementById('metadata');
     const textElement = document.getElementById('text');
     const numText = 92;

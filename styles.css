@@ -44,7 +44,7 @@ metadata {
     animation: blink 0.7s infinite;
 }
 
-/* Shaders */
+/* Shaders 
 
 .background {
     position: fixed;
@@ -62,6 +62,7 @@ metadata {
     width: 100%;
   }
 
+  */
 
 @keyframes blink {
     0% {
