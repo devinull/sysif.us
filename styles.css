@@ -18,11 +18,34 @@ body {
 }
 
 .header {
+    display:inline-block;
     text-align: left;
     color: rgb(0, 255, 0);
     cursor: pointer;
-    margin: 5% auto;
+    margin: 5% 10%;
     max-width:80%;
+}
+
+.header:hover .navigation{
+    opacity:100%;
+}
+
+.navigation {
+    position: absolute;
+    opacity:0%;
+    display: inline-block;
+    margin: 0 5%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.nav-link {
+    padding-right: 10px;
+    text-decoration: none;
+    color:rgb(0, 255, 0);
+}
+
+.nav-link:hover {
+    text-decoration: underline;
 }
 
 .container {
