@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function changeTopic(newFolderUrl) {
         if (isFetching) return; // Prevent changing topic while text is being fetched
         folderUrl = newFolderUrl;
-        urlNumber = getRandomNumber(1,numText);
+        urlNumber = getRandomNumber(1, numText);
         const nextUrl = baseUrl + folderUrl + urlNumber + '.txt';
         fetchTextFromUrl(nextUrl);
     }
@@ -121,6 +121,6 @@ document.addEventListener("DOMContentLoaded", function() {
         changeTopic('onFreedom/freedom.');
     });
 
-    // Initial fetch
+    // Initial fetch when the page loads
     fetchTextFromUrl(baseUrl + folderUrl + urlNumber + '.txt');
 });
