@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const typingSound = new Audio('https://raw.githubusercontent.com/devinull/psycho.site/main/audio/thock.mp3');
 
     // Event listener for initiating audio playback on user interaction
-    document.body.addEventListener('touchstart', function() {
+    document.body.addEventListener('click', function() {
         typingSound.volume = 0; // Set volume to 0 to enable playback
         typingSound.play();
         typingSound.volume = 1; // Set volume to 1 to enable playback
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Attach event listeners to navigation links
     document.getElementById('onSelf').addEventListener('click', function() {
-        changeTopic('onSelf/self.', 255);
+        changeTopic('onSelf/self.', 254);
     });
 
     document.getElementById('onSpirit').addEventListener('click', function() {
