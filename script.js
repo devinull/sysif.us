@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let urlNumber = getRandomNumber(1, numText);
     let isFetching = false; // Flag to track if text is currently being fetched
     let typingTimeout; // Timeout for typing animation
+    let previousScrollHeight = 0; // Variable to store previous scroll height
 
     const metadataElement = document.getElementById('metadata');
     const textElement = document.getElementById('text');
@@ -101,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Navigation functions
-    function changeTopic(newFolderUrl) {
+    function changeTopic(newFolderUrl, numText) {
         if (isFetching) return; // Prevent changing topic while text is being fetched
         folderUrl = newFolderUrl;
         urlNumber = getRandomNumber(1, numText);
@@ -111,15 +112,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Attach event listeners to navigation links
     document.getElementById('onSelf').addEventListener('click', function() {
-        changeTopic('onSelf/self.');
+        changeTopic('onSelf/self.', 255);
     });
 
     document.getElementById('onSpirit').addEventListener('click', function() {
-        changeTopic('onSpirit/spirit.');
+        changeTopic('onSpirit/spirit.', 154);
     });
 
     document.getElementById('onFreedom').addEventListener('click', function() {
-        changeTopic('onFreedom/freedom.');
+        changeTopic('onFreedom/freedom.', 92);
     });
 
     // Initial fetch when the page loads
@@ -130,8 +131,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const contentHeight = document.body.scrollHeight;
         const viewportHeight = window.innerHeight;
 
-        if (contentHeight > viewportHeight) {
+        if (contentHeight > viewportHeight && document.body.scrollHeight !== previousScrollHeight) {
             window.scrollTo(0, contentHeight);
+            previousScrollHeight = contentHeight;
         }
     }
+
+    // Event listener for scroll height changes
+    window.addEventListener('scroll', autoScrollPage);
 });
