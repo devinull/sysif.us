@@ -55,7 +55,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function typeNextLetter() {
             if (textIndex < text.length) {
-                typingSound.play(); // play typing sound
+                // Check if the typing sound is currently playing
+                if (!typingSound.paused) {
+                    // If it's playing, reset it to the beginning
+                    typingSound.currentTime = 0;
+                } else {
+                    // If it's not playing, start playing it
+                    typingSound.play();
+                }
+
                 autoScrollPage(); // check if page needs to be scrolled
                 // Check for line breaks and new lines
                 if (text[textIndex] === '\n') {
