@@ -54,7 +54,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function typeNextLetter() {
             if (textIndex < text.length) {
-                typingSound.play();
+                typingSound.play(); // play typing sound
+                autoScrollPage(); // check if page needs to be scrolled
                 // Check for line breaks and new lines
                 if (text[textIndex] === '\n') {
                     textElement.innerHTML += '<br>';
@@ -123,4 +124,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Initial fetch when the page loads
     fetchTextFromUrl(baseUrl + folderUrl + urlNumber + '.txt');
+
+    // Auto-scroll page if content exceeds viewport height
+    function autoScrollPage() {
+        const contentHeight = document.body.scrollHeight;
+        const viewportHeight = window.innerHeight;
+
+        if (contentHeight > viewportHeight) {
+            window.scrollTo(0, contentHeight);
+        }
+    }
 });
