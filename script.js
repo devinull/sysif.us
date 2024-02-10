@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const typingSound = new Audio('https://raw.githubusercontent.com/devinull/psycho.site/main/audio/thock.mp3');
 
     // Event listener for initiating audio playback on user interaction
-    document.body.addEventListener('click', function() {
+    document.body.addEventListener('touchstart', function() {
         typingSound.volume = 0; // Set volume to 0 to enable playback
         typingSound.play();
         typingSound.volume = 1; // Set volume to 1 to enable playback
