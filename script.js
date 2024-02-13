@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", function() {
         textElement.textContent = ''; // Clear previous text
 
         // Set the metadata text
-        metadataElement.textContent = '(' + urlNumber.toString(2) + ') >';
+        const folderName = folderUrl.split('/')[0]; // Extract folder name before '/'
+        metadataElement.textContent = folderName + '(' + urlNumber.toString(2) + ') >';
 
         function typeNextLetter() {
             if (textIndex < text.length) {
