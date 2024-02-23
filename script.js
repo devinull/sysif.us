@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     document.getElementById('onFreedom').addEventListener('click', function() {
-        changeTopic('onFreedom/freedom.', 92);
+        changeTopic('onFreedom/freedom.', 630);
     });
 
     // Initial fetch when the page loads
