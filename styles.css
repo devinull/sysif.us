@@ -29,6 +29,7 @@ body {
 
 .header:hover .navigation{
     opacity:100%;
+    visibility: visible;
 }
 
 .navigation {
@@ -36,7 +37,13 @@ body {
     opacity:0%;
     display: inline-block;
     margin: 0 5%;
-    transition: opacity 0.5s ease-in-out;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.show-navigation .navigation {
+    opacity: 1;
+    visibility: visible;
 }
 
 .nav-link {

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const baseUrl = 'https://raw.githubusercontent.com/devinull/psycho.site/main/text/';
     let folderUrl = 'onFreedom/freedom.';
-    const numText = 92;
+    const numText = 630;
     let urlNumber = getRandomNumber(1, numText);
     let isFetching = false; // Flag to track if text is currently being fetched
     let typingTimeout; // Timeout for typing animation
@@ -153,18 +153,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Event listener for scroll height changes
-    window.addEventListener('scroll', autoScrollPage);
-
-    // Show/hide navigation on mobile devices after 3 seconds
-    let navigationTimeout;
-    const navigation = document.querySelector('navigation');
-
-    navigation.addEventListener('click', function() {
-        navigation.classList.add('visible');
-        clearTimeout(navigationTimeout);
-        navigationTimeout = setTimeout(function() {
-            navigation.classList.remove('visible');
-        }, 3000); // 3000 milliseconds = 3 seconds
-    });
+     // Toggle navigation visibility on mobile devices
+     const header = document.querySelector('.header');
+     let tapCount = 0;
+ 
+     header.addEventListener('click', function() {
+         tapCount++;
+ 
+         if (tapCount % 2 !== 0) {
+             header.classList.add('show-navigation');
+         } else {
+             header.classList.remove('show-navigation');
+         }
+     });
 });
