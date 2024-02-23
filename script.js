@@ -32,14 +32,14 @@ document.addEventListener("DOMContentLoaded", function() {
         isFetching = true;
 
         fetch(url)
-        .then(response => response.text())
-        .then(text => {
-            typeText(text);
-        })
-        .catch(error => console.error('Error fetching text:', error))
-        .finally(() => {
-            isFetching = false; // Reset the flag after fetching is complete
-        });
+            .then(response => response.text())
+            .then(text => {
+                typeText(text);
+            })
+            .catch(error => console.error('Error fetching text:', error))
+            .finally(() => {
+                isFetching = false; // Reset the flag after fetching is complete
+            });
     }
 
     // Generate a random number between min and max (inclusive)
@@ -155,4 +155,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Event listener for scroll height changes
     window.addEventListener('scroll', autoScrollPage);
+
+    // Show/hide navigation on mobile devices after 3 seconds
+    let navigationTimeout;
+    const navigation = document.querySelector('navigation');
+
+    navigation.addEventListener('click', function() {
+        navigation.classList.add('visible');
+        clearTimeout(navigationTimeout);
+        navigationTimeout = setTimeout(function() {
+            navigation.classList.remove('visible');
+        }, 3000); // 3000 milliseconds = 3 seconds
+    });
 });
