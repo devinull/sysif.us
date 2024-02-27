@@ -139,6 +139,10 @@ document.addEventListener("DOMContentLoaded", function() {
         changeTopic('onFreedom/freedom.', 630);
     });
 
+    document.getElementById('onPrediction').addEventListener('click', function() {
+        changeTopic('onPrediction/prediction.', 502);
+    });
+
     // Initial fetch when the page loads
     fetchTextFromUrl(baseUrl + folderUrl + urlNumber + '.txt');
 
