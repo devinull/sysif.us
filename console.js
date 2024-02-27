@@ -144,7 +144,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const topics = [
             { folderUrl: 'onSelf/self.', numText: 254 },
             { folderUrl: 'onSpirit/spirit.', numText: 154 },
-            { folderUrl: 'onFreedom/freedom.', numText: 630 }
+            { folderUrl: 'onFreedom/freedom.', numText: 630 },
+            { folderUrl: 'onPrediction/prediction.', numText: 502 }
         ];
 
         const randomIndex = Math.floor(Math.random() * topics.length);
