@@ -149,11 +149,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Auto-scroll page if content exceeds viewport height
     function autoScrollPage() {
         const contentHeight = document.body.scrollHeight;
-        const viewportHeight = window.innerHeight;
+        const viewportHeight = window.innerHeight - window.innerHeight * 0.04; // Subtract 5vh from viewport height
+        const scrollPosition = contentHeight - viewportHeight + window.innerHeight * 0.04; // Scroll 5vh below content end
 
         if (contentHeight > viewportHeight && document.body.scrollHeight !== previousScrollHeight) {
-            window.scrollTo(0, contentHeight);
-            previousScrollHeight = contentHeight;
+            window.scrollTo(0, scrollPosition);
+            previousScrollHeight = document.body.scrollHeight;
         }
     }
 
