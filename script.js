@@ -176,41 +176,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     
-        const overlay = document.getElementById('overlay');
-        const closeBtn = document.getElementById('closeBtn');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const header = document.getElementById('header');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('closeBtn');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const header = document.getElementById('header');
 
-        // Function to open the overlay with fade-in effect
-        function openOverlay() {
-            overlay.style.display = 'flex';
-            setTimeout(() => {
-                overlay.classList.add('active');
-            }, 50);
+    function openOverlay() {
+        overlay.style.display = 'flex';
+        setTimeout(() => {
+            overlay.classList.add('active');
+        }, 50);
+    }
+
+    function closeOverlay() {
+        overlay.classList.remove('active');
+        setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 500);
+    }
+
+    header.addEventListener('click', openOverlay);
+    closeBtn.addEventListener('click', closeOverlay);
+    overlay.addEventListener('click', function(event) {
+        if (event.target === overlay) {
+            closeOverlay();
         }
+    });
 
-        // Function to close the overlay with fade-out effect
-        function closeOverlay() {
-            overlay.classList.remove('active');
-            setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 500);
-        }
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeOverlay);
+    });
 
-        // Event listener to open the overlay when header is clicked
-        header.addEventListener('click', openOverlay);
-
-        // Event listener to close the overlay when close button is clicked
-        closeBtn.addEventListener('click', closeOverlay);
-
-        // Event listener to close the overlay when a navigation link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', closeOverlay);
-        });
-
-        // Attach event listeners to navigation links to close overlay
-        document.getElementById('onSelf').addEventListener('click', closeOverlay);
-        document.getElementById('onSpirit').addEventListener('click', closeOverlay);
-        document.getElementById('onFreedom').addEventListener('click', closeOverlay);
-    
+    document.getElementById('onSelf').addEventListener('click', closeOverlay);
+    document.getElementById('onSpirit').addEventListener('click', closeOverlay);
+    document.getElementById('onFreedom').addEventListener('click', closeOverlay);
 });
