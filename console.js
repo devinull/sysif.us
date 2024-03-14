@@ -166,3 +166,26 @@ document.addEventListener("DOMContentLoaded", function() {
         source.start(0);
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('closeBtn');
+    const header = document.getElementById('header');
+
+    header.addEventListener('click', function() {
+        overlay.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', function() {
+        overlay.style.display = 'none';
+    });
+
+    // Attach event listeners to navigation links
+    document.getElementById('onSelf').addEventListener('click', closeOverlay);
+    document.getElementById('onSpirit').addEventListener('click', closeOverlay);
+    document.getElementById('onFreedom').addEventListener('click', closeOverlay);
+
+    function closeOverlay() {
+        overlay.style.display = 'none';
+    }
+});
