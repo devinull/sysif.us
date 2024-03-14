@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const baseUrl = 'https://raw.githubusercontent.com/devinull/psycho.site/main/text/';
-    let folderUrl = 'onFreedom/freedom.';
+    let folderUrl = 'Freedom/freedom.';
     const numText = 630;
     let urlNumber = getRandomNumber(1, numText);
     let isFetching = false; // Flag to track if text is currently being fetched
@@ -128,19 +128,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Attach event listeners to navigation links
     document.getElementById('onSelf').addEventListener('click', function() {
-        changeTopic('onSelf/self.', 254);
+        changeTopic('Self/self.', 254);
     });
 
     document.getElementById('onSpirit').addEventListener('click', function() {
-        changeTopic('onSpirit/spirit.', 154);
+        changeTopic('Spirit/spirit.', 154);
     });
 
     document.getElementById('onFreedom').addEventListener('click', function() {
-        changeTopic('onFreedom/freedom.', 630);
+        changeTopic('Freedom/freedom.', 630);
     });
 
     document.getElementById('onPrediction').addEventListener('click', function() {
-        changeTopic('onPrediction/prediction.', 502);
+        changeTopic('Prediction/prediction.', 502);
     });
 
     // Initial fetch when the page loads
