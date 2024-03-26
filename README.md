@@ -11,6 +11,6 @@
  
  [x] different categories and navigation
  
- []  create archive database with all files listed to show the amount of data generated
+ [ ]  create archive database with all files listed to show the amount of data generated
  
- []  add chat functionality?
+ [ ]  add chat functionality?
