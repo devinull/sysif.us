@@ -143,10 +143,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Select a random topic from the available options
     function selectRandomTopic() {
         const topics = [
-            { folderUrl: 'onSelf/self.', numText: 254 },
-            { folderUrl: 'onSpirit/spirit.', numText: 154 },
-            { folderUrl: 'onFreedom/freedom.', numText: 630 },
-            { folderUrl: 'onPrediction/prediction.', numText: 502 }
+            { folderUrl: 'Self/self.', numText: 254 },
+            { folderUrl: 'Spirit/spirit.', numText: 154 },
+            { folderUrl: 'Freedom/freedom.', numText: 630 },
+            { folderUrl: 'Prediction/prediction.', numText: 502 }
         ];
 
         const randomIndex = Math.floor(Math.random() * topics.length);
